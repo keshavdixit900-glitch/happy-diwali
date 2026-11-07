@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शुभ दीपावली</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans Devanagari", sans-serif;
+    background: linear-gradient(135deg, #310047, #85002c, #ff7000);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* मुख्य भाग */
+.container {
+    padding: 25px 15px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* शीर्षक */
+h1 {
+    font-size: 42px;
+    color: #ffe66d;
+    text-shadow: 0 0 15px orange, 0 0 30px red;
+    margin: 25px 0;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px orange; }
+    to { text-shadow: 0 0 30px yellow, 0 0 45px red; }
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #fff4c2;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* मुख्य तस्वीर */
+.main-photo {
+    width: 100%;
+    max-width: 480px;
+    height: 290px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.08);
+    border: 4px solid gold;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 0 25px gold;
+}
+
+/* बटन */
+button {
+    background: linear-gradient(45deg, #ffcc00, #ff6600);
+    color: #650020;
+    border: 2px solid white;
+    padding: 15px 30px;
+    border-radius: 35px;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 25px 0;
+    cursor: pointer;
+    box-shadow: 0 0 20px orange;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* शुभकामना कार्ड */
+.message {
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid gold;
+    border-radius: 20px;
+    padding: 25px 18px;
+    margin: 25px 0;
+    box-shadow: 0 0 20px rgba(255,200,0,0.4);
+}
+
+.message h2 {
+    color: #ffe66d;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 2;
+    color: #fff8dc;
+}
+
+/* देवी देवताओं की तस्वीरें */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.gallery div {
+    background: rgba(255,255,255,0.12);
+    padding: 10px;
+    border: 2px solid gold;
+    border-radius: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.gallery h3 {
+    color: #ffe66d;
+    margin-top: 10px;
+}
+
+/* दीपक */
+.diyas {
+    font-size: 35px;
+    margin: 20px 0;
+    letter-spacing: 8px;
+    animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+    from { opacity: 0.7; }
+    to { opacity: 1; text-shadow: 0 0 20px orange; }
+}
+
+/* फूल */
+.flower {
+    position: fixed;
+    top: -40px;
+    font-size: 25px;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    color: #ffe8a0;
+    font-size: 17px;
+    padding: 25px 10px;
+    line-height: 2;
+}
+
+@media(max-width: 500px) {
+    h1 { font-size: 31px; }
+    .subtitle { font-size: 17px; }
+    .gallery img { height: 145px; }
+    .message p { font-size: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="diyas">
+        🪔 🪔 🪔 🪔 🪔
+    </div>
+
+    <h1>✨ शुभ दीपावली ✨</h1>
+
+    <p class="subtitle">
+        आप सभी को दीपावली के पावन पर्व की
+        हार्दिक शुभकामनाएँ! ❤️
+        <br>
+        यह त्योहार आपके जीवन में खुशियों की नई रोशनी लेकर आए।
+    </p>
+
+    <img class="main-photo"
+    src="https://commons.wikimedia.org/wiki/Special:FilePath/Diwali_Puja.JPG"
+    alt="दीपावली पूजा">
+
+    <br>
+
+    <button onclick="showMessage()">
+        ❤️ यहाँ क्लिक करें ❤️
+    </button>
+
+    <div id="surprise" class="hidden">
+
+        <h1>🎆 दीपावली की हार्दिक शुभकामनाएँ 🎆</h1>
+
+        <div class="message">
+            <h2>🌸 आपके लिए कुछ प्यारी शुभकामनाएँ 🌸</h2>
+
+            <p>
+                आपका जीवन हमेशा दीपक की रोशनी की तरह चमकता रहे। 🪔
+                <br><br>
+
+                आपके चेहरे पर हमेशा प्यारी सी मुस्कान बनी रहे। 😊
+                <br><br>
+
+                आपके जीवन से दुखों का अंधकार दूर हो और खुशियों का उजाला आए।
+                <br><br>
+
+                आपके हर सपने को एक नई उड़ान मिले और आपकी हर मेहनत सफल हो।
+                <br><br>
+
+                आपके घर में हमेशा सुख, शांति, प्रेम और समृद्धि बनी रहे।
+                <br><br>
+
+                माँ लक्ष्मी की कृपा से आपके घर में धन-धान्य की कभी कमी न हो।
+                <br><br>
+
+                माँ सरस्वती आपको ज्ञान, बुद्धि और सफलता प्रदान करें।
+                <br><br>
+
+                गणेश जी आपके जीवन की हर बाधा दूर करें।
+                <br><br>
+
+                प्रभु श्रीराम आपके जीवन में सत्य, प्रेम और मर्यादा का प्रकाश भरें।
+                <br><br>
+
+                आपका परिवार हमेशा स्वस्थ, खुशहाल और एकजुट रहे।
+                <br><br>
+
+                आपके जीवन का हर दिन दीपावली जैसा सुंदर और रोशन हो।
+                <br><br>
+
+                आपकी जिंदगी में कभी खुशियों की कमी न आए और हर सुबह एक नई उम्मीद लेकर आए।
+            </p>
+        </div>
+
+        <div class="diyas">
+            🪔 🌺 🪔 🌺 🪔
+        </div>
+
+        <h1>🙏 देवी-देवताओं का आशीर्वाद 🙏</h1>
+
+        <div class="gallery">
+
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lakshmi_Painting.jpg"
+                alt="माँ लक्ष्मी">
+                <h3>🌺 माँ लक्ष्मी 🌺</h3>
+                <p>आपके घर में सुख-समृद्धि बनी रहे।</p>
+            </div>
+
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sarasvati_Devi_Painting.jpg"
+                alt="माँ सरस्वती">
+                <h3>📚 माँ सरस्वती</h3>
+                <p>आपको ज्ञान और बुद्धि का आशीर्वाद मिले।</p>
+            </div>
+
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Diwali_Puja.JPG"
+                alt="श्री गणेश जी">
+                <h3>🙏 श्री गणेश जी</h3>
+                <p>आपके सभी कार्य मंगलमय हों।</p>
+            </div>
+
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rama_Lakshmana.jpg"
+                alt="श्रीराम और लक्ष्मण">
+                <h3>🏹 श्रीराम एवं लक्ष्मण जी</h3>
+                <p>आपके जीवन में धर्म और सत्य की विजय हो।</p>
+            </div>
+
+        </div>
+
+        <div class="message">
+            <h2>💖 एक छोटी सी दुआ 💖</h2>
+            <p>
+                ईश्वर करे आपका हर दिन खुशियों से भरा हो,
+                हर रास्ता सफलता की ओर जाए,
+                हर सपना सच हो,
+                हर रिश्ता प्यार से भरा हो
+                और आपका पूरा जीवन खुशियों के दीपों से जगमगाता रहे।
+                <br><br>
+                आप सभी को दिल से बहुत-बहुत शुभ दीपावली! ❤️
+            </p>
+        </div>
+
+        <h1>🪔 दीपावली मंगलमय हो 🪔</h1>
+
+    </div>
+
+    <div class="diyas">
+        🪔 🪔 🌟 🪔 🪔
+    </div>
+
+    <footer>
+        🌺 प्रेम, खुशियों और रोशनी का त्योहार 🌺
+        <br>
+        आप सभी का जीवन मंगलमय हो।
+        <br>
+        ❤️ शुभ दीपावली ❤️
+    </footer>
+
+</div>
+
+<script>
+
+// शुभकामना दिखाने वाला बटन
+function showMessage() {
+    document.getElementById("surprise").style.display = "block";
+    document.getElementById("surprise").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// फूलों और सितारों की बारिश
+const flowers = ["🌸", "🌺", "✨", "🌼", "💛", "🪔"];
+
+function createFlower() {
+    const flower = document.createElement("div");
+
+    flower.className = "flower";
+    flower.innerHTML =
+        flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration =
+        (3 + Math.random() * 5) + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 8000);
+}
+
+setInterval(createFlower, 350);
+
+</script>
+
+</body>
+</html>
